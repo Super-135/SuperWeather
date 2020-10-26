@@ -8,13 +8,23 @@
 
 
 
-    <FrameLayout
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <fragment android:name="com.superlip.superweather.FragmenstMain"
+        android:layout_height="match_parent"
+        android:baselineAligned="false">
+        <fragment
+            android:name="com.superlip.superweather.FragmenstMain"
             android:id="@+id/main"
+            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
-    </FrameLayout>
+        <fragment
+            android:name="com.superlip.superweather.FragmentWeatherForWeek"
+            android:id="@+id/week"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

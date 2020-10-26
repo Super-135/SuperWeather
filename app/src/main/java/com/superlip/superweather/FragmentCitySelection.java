@@ -42,9 +42,8 @@ public class FragmentCitySelection extends Fragment {
             public void onClick(View v) {
                 EventBus.getBus().post(new SomeEvent(tViewtFavouritesCity.getText().toString()));
                 final MySingleton mySingleton = MySingleton.getInstance();
-                mySingleton.incrementCounter(tViewtFavouritesCity.getText().toString());                   // Увеличиваем счетчик на единицу
-
-
+                mySingleton.incrementCounter(tViewtFavouritesCity.getText().toString());                   // Увеличиваем счетчик на единицу+
+                getActivity().finish();
             }
         });
     }
