@@ -12,9 +12,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.material.textfield.TextInputEditText;
+
 public class FragmentCitySelection extends Fragment {
 
-    private TextView tViewtFavouritesCity;
+    private TextInputEditText tViewFavouritesCity;
     private ImageView iViewFavourites;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
@@ -31,7 +33,7 @@ public class FragmentCitySelection extends Fragment {
     }
 
     private void findView(View view) {
-        tViewtFavouritesCity = view.findViewById(R.id.tViewtFavouritesCity);
+        tViewFavouritesCity = view.findViewById(R.id.tViewFavouritesCity);
         iViewFavourites = view.findViewById(R.id.iViewFavourites);
 
     }
@@ -40,9 +42,9 @@ public class FragmentCitySelection extends Fragment {
         iViewFavourites.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EventBus.getBus().post(new SomeEvent(tViewtFavouritesCity.getText().toString()));
+//                EventBus.getBus().post(new SomeEvent(tViewtFavouritesCity.getText().toString()));
                 final MySingleton mySingleton = MySingleton.getInstance();
-                mySingleton.incrementCounter(tViewtFavouritesCity.getText().toString());                   // Увеличиваем счетчик на единицу+
+                mySingleton.incrementCounter(tViewFavouritesCity.getText().toString());                   // Увеличиваем счетчик на единицу+
                 getActivity().finish();
             }
         });
